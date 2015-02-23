@@ -1,0 +1,48 @@
+<!doctype html>
+<link type="text/css" rel="stylesheet" href="css/graph.css">
+<link type="text/css" rel="stylesheet" href="css/detail.css">
+<link type="text/css" rel="stylesheet" href="css/lines.css">
+
+<script src="js/d3.v3.js"></script>
+<script src="js/rickshaw.js"></script>
+
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-dialog.js"></script>
+    <script src="js/jquery.slimscroll.min.js"></script>
+    <script src="js/stormUtils.js"></script>
+    <script src="js/loadStormPanel.js"></script>
+    <script src="js/jquery.flot.js"></script>
+	<script src="js/flot/jquery.flot.time.js"></script>    
+	<script src="js/flot/jshashtable-2.1.js"></script>    
+	<script src="js/flot/jquery.numberformatter-1.2.3.min.js"></script>
+	<script src="js/flot/jquery.flot.symbol.js"></script>
+	<script src="js/flot/jquery.flot.axislabels.js"></script>
+    <!--<script src="js/main.js"></script>-->
+    <script src="js/selectValue.js"></script> 
+    <script src="js/loadStormPanel2.js"></script> 
+<style type="text/css">
+  #axis0 {
+    position: absolute;
+    height: 800px;
+    width: 40px;
+  }
+  #axis1 {
+    position: absolute;
+    left: 1050px;
+    height: 800px;
+    width: 40px;
+  }
+  #chart {
+    left: 50px;
+    width: 1000px;
+	height: 500px;
+    position: absolute;
+  }
+</style>
+<div id="axis0"></div>
+<div id="chart"></div>
+<div id="axis1"></div>
+<div class="row" id="buttons" style="display:inline">
+              <input type="text" class="form-control2" placeholder="dateOfData"  id="dateOfData" readonly/>
+</div>

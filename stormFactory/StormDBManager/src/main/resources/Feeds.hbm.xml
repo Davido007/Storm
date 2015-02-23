@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 6, 2013 12:45:40 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="Feeds" table="feeds">
+        <id name="keycolumn" type="int">
+            <column name="keycolumn" />
+            <generator class="assigned" />
+        </id>
+		<property name="symbol" type="String">
+			<column name="symbol" length="17" />
+		</property>
+        <property name="date" type="date">
+            <column name="date" length="13" />
+        </property>
+        <property name="stockclose" type="double">
+            <column name="stockclose" precision="17" scale="17" not-null="true" />
+        </property>
+        <property name="stockhigh" type="double">
+            <column name="stockhigh" precision="17" scale="17" not-null="true" />
+        </property>
+        <property name="stocklow" type="double">
+            <column name="stocklow" precision="17" scale="17" not-null="true" />
+        </property>
+        <property name="stockopen" type="double">
+            <column name="stockopen" precision="17" scale="17" not-null="true" />
+        </property>
+        <property name="stockopenint" type="double">
+            <column name="stockopenint" precision="17" scale="17" not-null="true" />
+        </property>
+        <property name="stockvolume" type="double">
+            <column name="stockvolume" precision="17" scale="17" not-null="true" />
+        </property>
+        <property name="time" type="time">
+            <column name="time" length="15" />
+          
+        </property>
+    </class>
+</hibernate-mapping>

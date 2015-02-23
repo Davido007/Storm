@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD//EN"
+" http://www.hibernate.org/dtd//hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+        <session-factory>
+        
+                <!-- Database connection settings -->
+                <property name="connection.driver_class">${db.connection.driver_class}</property>
+                <property name="connection.url">${db.connection.url}</property>
+               
+                <property name="connection.username">${db.connection.username}</property>
+                <property name="connection.password">rule</property>
+                <property name="hibernate.jdbc.batch_size">${db.batch_size}</property>
+                <!-- JDBC connection pool -->
+                <property name="connection.pool_size">${db.connection.pool_size}</property>
+                 
+                <!-- SQL dialect -->
+                <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+                
+                <!-- Disable the second-level cache -->
+                <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+                
+                <!-- Echo all executed SQL to stdout -->
+                <property name="show_sql">${db.show_sql}</property>
+                
+                <!-- Drop and re-create the database schema on startup -->
+                <property name="hbm2ddl.auto">${db.hbm2ddl.auto}</property>
+                <!-- Mapping file -->
+				<mapping package="com.rulefinancial"/>
+				<mapping class="com.rulefinancial.Feeds"/>
+                
+                <!-- Names the annotated entity class -->
+                <!--  example format <mapping class="com.rulefinancial.dto.Person" /> -->
+        
+        </session-factory>
+</hibernate-configuration>

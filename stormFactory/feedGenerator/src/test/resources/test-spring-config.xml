@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jms="http://www.springframework.org/schema/jms"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<!-- CTX -->
+	<context:property-placeholder location="classpath:config.properties" />
+	<context:annotation-config />
+
+	<!-- JMS -->
+	<bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL" value="${jms.broker.url}" />
+	</bean>
+	
+	<bean id="stormQueue" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg value="${jms.queue.name}" />
+	</bean>
+	
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="connectionFactory" />
+		<property name="defaultDestination" ref="stormQueue" />
+	</bean>
+	
+	<bean id="jmsBatchProcessor" class="com.rulefinancial.jms.JmsBatchProcessorImpl">
+	</bean>
+	
+	<bean id="messageListener" class="com.rulefinancial.jms.MessageListenerImpl">
+	</bean>
+	
+	<jms:listener-container>
+		<jms:listener destination="${jms.queue.name}" ref="messageListener" method="consumeMessage" />
+	</jms:listener-container>
+	
+	
+	<!-- THREADING -->
+	<bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<property name="corePoolSize" value="${te.core.pool.size}" />
+		<property name="maxPoolSize" value="${te.max.pool.size}" />
+		<property name="queueCapacity" value="${te.queue.capacity}" />
+	</bean>
+	
+	<bean id="feedDao" class="com.rulefinancial.dao.DAO" />
+	
+	<bean id="feedSonar" class="com.rulefinancial.thread.FeedSonar" scope="singleton">
+		<constructor-arg ref="taskExecutor" />
+		<constructor-arg value="${feedsonar.task.class}" />
+		<constructor-arg ref="feedDao" />
+		
+		<property name="sleepTime" value="${feedsonar.sleep.time}" />
+		<property name="duration" value="${feedsonar.duration.time}" />
+		<property name="symbols" value="${feedsonar.symbols}" />
+	</bean>
+	
+	<bean id="feedsGeneratorTask" class="com.rulefinancial.thread.task.FeedsGeneratorTask">
+		<constructor-arg value="test.t" />
+		<constructor-arg value="0" />
+		<constructor-arg value="-1" />
+		<constructor-arg ref="jmsBatchProcessor" />
+		<constructor-arg ref="feedDao" />
+	</bean>
+	
+</beans>

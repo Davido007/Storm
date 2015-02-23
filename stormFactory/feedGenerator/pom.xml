@@ -1,0 +1,141 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>feedGenerator</artifactId>
+  <packaging>war</packaging>
+  
+  
+  <parent>
+    <groupId>com.rulefinancial</groupId>
+    <artifactId>stormFactory</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <properties>
+  	<version.java>1.7</version.java>
+  	<version.plugin.compiler>3.1</version.plugin.compiler>
+  	<version.dependency.spring>3.2.5.RELEASE</version.dependency.spring>
+  	<version.dependency.activemq>5.7.0</version.dependency.activemq>
+  	<version.dependency.jackson>1.9.13</version.dependency.jackson>
+  	<version.dependency.json>20131018</version.dependency.json>
+  	<version.dependency.slf4j>1.7.5</version.dependency.slf4j>
+  	<version.dependency.log4j>1.2.16</version.dependency.log4j>
+  	<version.dependency.junit>4.11</version.dependency.junit>
+  	<version.dependency.mockito>1.9.5</version.dependency.mockito>
+  	<version.dependency.gson>2.2.4</version.dependency.gson>
+  </properties>
+  
+  
+  <dependencies>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>${version.dependency.spring}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${version.dependency.spring}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-aop</artifactId>
+		<version>${version.dependency.spring}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-jms</artifactId>
+		<version>${version.dependency.spring}</version>
+	</dependency>
+	
+    <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-test</artifactId>
+		<version>${version.dependency.spring}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.apache.activemq</groupId>
+		<artifactId>activemq-core</artifactId>
+		<version>${version.dependency.activemq}</version>
+	</dependency> 
+	
+	<dependency>
+		<groupId>org.codehaus.jackson</groupId>
+		<artifactId>jackson-mapper-asl</artifactId>
+		<version>${version.dependency.jackson}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.json</groupId>
+		<artifactId>json</artifactId>
+		<version>${version.dependency.json}</version>
+	</dependency>	
+	
+	<!-- Logging -->
+	<dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${version.dependency.slf4j}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>jcl-over-slf4j</artifactId>
+        <version>${version.dependency.slf4j}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>${version.dependency.slf4j}</version>
+    </dependency>
+    <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>${version.dependency.log4j}</version>
+    </dependency>	
+    
+    <dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>${version.dependency.junit}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.mockito</groupId>
+		<artifactId>mockito-all</artifactId>
+		<version>${version.dependency.mockito}</version>
+	</dependency>
+	
+	<!-- JSON -->
+	<dependency>
+		<groupId>com.google.code.gson</groupId>
+		<artifactId>gson</artifactId>
+		<version>${version.dependency.gson}</version>
+	</dependency>
+	
+	
+	<!-- DB Model -->
+  	<dependency>
+  		<groupId>com.rulefinancial</groupId>
+  		<artifactId>StormDBManager</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+  
+  
+  <build>
+  	<plugins>
+  		<plugin>
+    		<artifactId>maven-compiler-plugin</artifactId>
+    		<version>${version.plugin.compiler}</version>				
+    		<configuration>
+    			<source>${version.java}</source>
+    			<target>${version.java}</target>
+    		</configuration>
+    	</plugin>
+  	</plugins>
+  </build>
+  
+</project>

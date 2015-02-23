@@ -1,0 +1,15 @@
+/target
+
+
+# Eclipse stuff
+/.classpath
+/.project
+/.settings
+
+
+# Spring stuff
+/.springBeans
+/target
+/target
+
+.idea
