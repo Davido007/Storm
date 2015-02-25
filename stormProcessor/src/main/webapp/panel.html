@@ -6,21 +6,18 @@
     <title>Storm | Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
    
-       <link type="text/css" rel="stylesheet" href="css/graph.css">
-<link type="text/css" rel="stylesheet" href="css/detail.css">
-<link type="text/css" rel="stylesheet" href="css/lines.css">
-<link type="text/css" rel="stylesheet" href="css/legend.css">
+       
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/panel.css">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/navi.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-dialog.css">
-<link type="text/css" rel="stylesheet" href="css/extensions.css">
+        
    </head>
 
 <!-- HTML code -->
 
-<body> 
+<body>
 
            <div id="header">
             <h1 id="logo">
@@ -34,61 +31,8 @@
                 </ul>
               </div>
         </div>
-  	<form id="side_panel">
-		<section><div id="legend"></div></section>
-		<section id="render">
-			<div id="renderer_form" class="toggler">
-				<input type="radio" name="renderer" id="area" value="area" checked>
-				<label for="area">area</label>
-				<input type="radio" name="renderer" id="bar" value="bar">
-				<label for="bar">bar</label>
-				<input type="radio" name="renderer" id="line" value="line">
-				<label for="line">line</label>
-				<input type="radio" name="renderer" id="scatter" value="scatterplot">
-				<label for="scatter">scatter</label>
-			</div>
-		</section>
-		<section id="bbb">
-			<div id="offset_form">
-				<label for="stack">
-					<input type="radio" name="offset" id="stack" value="zero" checked>
-					<span>stack</span>
-				</label>
-				<label for="stream">
-					<input type="radio" name="offset" id="stream" value="wiggle">
-					<span>stream</span>
-				</label>
-				<label for="pct">
-					<input type="radio" name="offset" id="pct" value="expand">
-					<span>pct</span>
-				</label>
-				<label for="value">
-					<input type="radio" name="offset" id="value" value="value">
-					<span>value</span>
-				</label>
-			</div>
-                    		</section>
-                    		<section id="ccc">
-			<div id="interpolation_form">
-				<label for="cardinal">
-					<input type="radio" name="interpolation" id="cardinal" value="cardinal" checked>
-					<span>cardinal</span>
-				</label>
-				<label for="linear">
-					<input type="radio" name="interpolation" id="linear" value="linear">
-					<span>linear</span>
-				</label>
-				<label for="step">
-					<input type="radio" name="interpolation" id="step" value="step-after">
-					<span>step</span>
-				</label>
-			</div>
-		</section>
-	</form>           
-      	<div id="legend_container">	
-		<div id="legend"></div>
-	</div>
-	
+             
+      
 <!-- Begin Body -->
 <div class="container-fluid" id="main">
 <div class="holder">
@@ -104,18 +48,12 @@
                 <div id="content">
 			 <form class="form-horizontal">
 			<div class="demo-container">
-			<div id="axis0"></div>
 				<div id="placeholder" class="demo-placeholder"></div>
-				
 			</div>
 			</form>
         </div>
+
             <div class="row" id="buttons">
-              <form class="form-inline">
-              <input type="text" class="form-control2" placeholder="ChoosenData" id="choosenData" readonly/>
-              <input type="text" class="form-control2" placeholder="ChoosenSMA"  id="choosenSMA" readonly/>
-              <input type="text" class="form-control2" placeholder="ChoosenEMA"  id="choosenEMA" readonly/>
-                 </form>
                          <div class="btn-group dropup">
                         <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" id="nav">Choose
                             instrument
@@ -166,7 +104,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="notification-placeholder"></div>
-										<div id="legend1"></div>
+
                                     <div class="list-group">
                                         <!--<a href="#" class="list-group-item active">Cras justo odio</a>-->
                                     </div>
@@ -201,14 +139,13 @@
 
 <!-- JavaScript -->
 
-<script src="js/d3.v3.js"></script>
-<script src="js/rickshaw.js"></script>
+
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap-dialog.js"></script>
     <script src="js/jquery.slimscroll.min.js"></script>
     <script src="js/stormUtils.js"></script>
-    <script src="js/loadStormPanel2.js"></script>
+    <script src="js/loadStormPanel.js"></script>
     <script src="js/jquery.flot.js"></script>
 	<script src="js/flot/jquery.flot.time.js"></script>    
 	<script src="js/flot/jshashtable-2.1.js"></script>    

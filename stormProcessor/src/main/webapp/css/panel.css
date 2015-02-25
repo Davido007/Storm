@@ -155,23 +155,11 @@ body {
 	-moz-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 	-webkit-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
- #axis0 {
-    position: absolute;
-    height: 800px;
-    width: 40px;
-    left: 15px;
-  }
-  #axis1 {
-    position: relative;
-    left: 550px;
-    height: 800px;
-    width: 40px;
-  }
+
 .demo-placeholder {
 
 	position:relative;
-	left: 40px;
-	width: 90%;
+	width: 100%;
 	height: 100%;
 	font-size: 14px;
 	line-height: 1.2em;
